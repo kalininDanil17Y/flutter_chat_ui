@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart' hide Element;
-import 'package:flutter_chat_types/flutter_chat_types.dart'
+import 'package:flutter_chat_ui/types/flutter_chat_types.dart'
     show PreviewData, PreviewDataImage;
 import 'package:html/dom.dart' show Document, Element;
 import 'package:html/parser.dart' as parser show parse;
