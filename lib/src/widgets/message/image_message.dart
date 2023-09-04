@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/types/flutter_chat_types' as types;
+import 'package:flutter_chat_ui/types/flutter_chat_types.dart' as types;
 
 import '../../conditional/conditional.dart';
 import '../../util.dart';
