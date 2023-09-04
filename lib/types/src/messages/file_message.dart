@@ -52,6 +52,10 @@ abstract class FileMessage extends Message {
     required String uri,
   }) = _FileMessage;
 
+    /// Creates a file message from a map (decoded JSON).
+  factory FileMessage.fromJson(Map<String, dynamic> json) =>
+      _$FileMessageFromJson(json);
+
   /// Creates a full file message from a partial one.
   factory FileMessage.fromPartial({
     required User author,
@@ -144,6 +148,10 @@ abstract class FileMessage extends Message {
     String? uri,
   });
 }
+
+/// Converts a file message to the map representation, encodable to JSON.
+  @override
+  Map<String, dynamic> toJson() => _$FileMessageToJson(this);
 
 /// A utility class to enable better copyWith.
 class _FileMessage extends FileMessage {
