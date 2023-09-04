@@ -1,4 +1,4 @@
-library flutter_chat_types;
+library flutter_chat_ui;
 
 export 'src/message.dart';
 export 'src/messages/audio_message.dart';
