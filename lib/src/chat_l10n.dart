@@ -12,6 +12,9 @@ abstract class ChatL10n {
     required this.inputPlaceholder,
     required this.sendButtonAccessibilityLabel,
     required this.unreadMessagesLabel,
+    required this.typing1,
+    required this.typing2,
+    required this.typing3
   });
 
   /// Accessibility label (hint) for the attachment button.
@@ -31,6 +34,10 @@ abstract class ChatL10n {
 
   /// Label for the unread messages header.
   final String unreadMessagesLabel;
+
+  final String typing1;
+  final String typing2;
+  final String typing3;
 }
 
 /// Arabic l10n which extends [ChatL10n].
@@ -46,6 +53,9 @@ class ChatL10nAr extends ChatL10n {
     super.inputPlaceholder = 'الرسالة',
     super.sendButtonAccessibilityLabel = 'إرسال',
     super.unreadMessagesLabel = 'الرسائل غير المقروءة',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -62,6 +72,9 @@ class ChatL10nDe extends ChatL10n {
     super.inputPlaceholder = 'Nachricht',
     super.sendButtonAccessibilityLabel = 'Senden',
     super.unreadMessagesLabel = 'Ungelesene Nachrichten',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -78,6 +91,9 @@ class ChatL10nEn extends ChatL10n {
     super.inputPlaceholder = 'Message',
     super.sendButtonAccessibilityLabel = 'Send',
     super.unreadMessagesLabel = 'Unread messages',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -94,6 +110,9 @@ class ChatL10nEs extends ChatL10n {
     super.inputPlaceholder = 'Mensaje',
     super.sendButtonAccessibilityLabel = 'Enviar',
     super.unreadMessagesLabel = 'Mensajes no leídos',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -110,6 +129,9 @@ class ChatL10nFi extends ChatL10n {
     super.inputPlaceholder = 'Viesti',
     super.sendButtonAccessibilityLabel = 'Lähetä',
     super.unreadMessagesLabel = 'Lukemattomat viestit',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -126,6 +148,9 @@ class ChatL10nKo extends ChatL10n {
     super.inputPlaceholder = '메시지',
     super.sendButtonAccessibilityLabel = '보내기',
     super.unreadMessagesLabel = '읽지 않은 메시지',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -142,6 +167,9 @@ class ChatL10nPl extends ChatL10n {
     super.inputPlaceholder = 'Napisz wiadomość',
     super.sendButtonAccessibilityLabel = 'Wyślij',
     super.unreadMessagesLabel = 'Nieprzeczytane wiadomości',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -158,6 +186,9 @@ class ChatL10nPt extends ChatL10n {
     super.inputPlaceholder = 'Mensagem',
     super.sendButtonAccessibilityLabel = 'Enviar',
     super.unreadMessagesLabel = 'Mensagens não lidas',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -174,6 +205,9 @@ class ChatL10nRu extends ChatL10n {
     super.inputPlaceholder = 'Сообщение',
     super.sendButtonAccessibilityLabel = 'Отправить',
     super.unreadMessagesLabel = 'Непрочитанные сообщения',
+    super.typing1 = '%s печатает.',
+    super.typing2 = '%s и %s печатают',
+    super.typing3 = '%s и %s других',
   });
 }
 
@@ -190,6 +224,9 @@ class ChatL10nSe extends ChatL10n {
     super.inputPlaceholder = 'Meddelande',
     super.sendButtonAccessibilityLabel = 'Skicka',
     super.unreadMessagesLabel = 'Olästa meddelanden',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -206,6 +243,9 @@ class ChatL10nTr extends ChatL10n {
     super.inputPlaceholder = 'Mesaj yazın',
     super.sendButtonAccessibilityLabel = 'Gönder',
     super.unreadMessagesLabel = 'Okunmamış Mesajlar',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -222,6 +262,9 @@ class ChatL10nUk extends ChatL10n {
     super.inputPlaceholder = 'Повідомлення',
     super.sendButtonAccessibilityLabel = 'Надіслати',
     super.unreadMessagesLabel = 'Непрочитанi повідомлення',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -238,6 +281,9 @@ class ChatL10nZhCN extends ChatL10n {
     super.inputPlaceholder = '输入消息',
     super.sendButtonAccessibilityLabel = '发送',
     super.unreadMessagesLabel = '未读消息',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }
 
@@ -254,5 +300,8 @@ class ChatL10nZhTW extends ChatL10n {
     super.inputPlaceholder = '輸入訊息',
     super.sendButtonAccessibilityLabel = '傳送',
     super.unreadMessagesLabel = '未讀訊息',
+    super.typing1 = '%s is typing',
+    super.typing2 = '%s and %s',
+    super.typing3 = '%s and %s others',
   });
 }

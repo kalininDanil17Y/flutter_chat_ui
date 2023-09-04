@@ -4,12 +4,25 @@ import '../../flutter_chat_ui.dart';
 import '../util.dart';
 import 'state/inherited_chat_theme.dart';
 
+String sprintf(String format, List<dynamic> params) {
+  int paramIndex = 0;
+
+  return format.replaceAllMapped(RegExp('%s'), (match) {
+    if (paramIndex < params.length) {
+      return params[paramIndex++].toString();
+    } else {
+      throw ArgumentError('Insufficient number of arguments for format string');
+    }
+  });
+}
+
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({
     super.key,
     required this.bubbleAlignment,
     this.options = const TypingIndicatorOptions(),
     required this.showIndicator,
+    this.l10n = const ChatL10nEn(),
   });
 
   /// See [Message.bubbleRtlAlignment].
@@ -17,6 +30,8 @@ class TypingIndicator extends StatefulWidget {
 
   /// See [TypingIndicatorOptions].
   final TypingIndicatorOptions options;
+
+  final ChatL10n l10n;
 
   /// Used to hide indicator when the [options.typingUsers] is empty.
   final bool showIndicator;
@@ -225,11 +240,11 @@ class TypingWidget extends StatelessWidget {
     if (author.isEmpty) {
       return '';
     } else if (author.length == 1) {
-      return '${author.first.firstName} is typing';
+      return sprintf(widget.l10n.typing1, author.first.firstName);
     } else if (author.length == 2) {
-      return '${author.first.firstName} and ${author[1].firstName}';
+      return sprintf(widget.l10n.typing2, author.first.firstName, author[1].firstName);
     } else {
-      return '${author.first.firstName} and ${author.length - 1} others';
+      return sprintf(widget.l10n.typing3, author.first.firstName, author.length - 1);
     }
   }
 
