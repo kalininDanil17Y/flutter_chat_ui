@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_ui/types/flutter_chat_types.dart' as types;
 import 'package:flutter_chat_ui/flutter_chat_ui.dart';
-import 'package:flutter_link_previewer/flutter_link_previewer.dart'
+import 'package:flutter_chat_ui/flutter_link_previewer/flutter_link_previewer.dart'
     show LinkPreview;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:visibility_detector/visibility_detector.dart';
