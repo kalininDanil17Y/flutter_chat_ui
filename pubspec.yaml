@@ -22,10 +22,17 @@ dependencies:
   scroll_to_index: ^3.0.1
   url_launcher: ^6.1.12
   visibility_detector: ^0.4.0+2
+  flutter_linkify: ^6.0.0
+  html: ^0.15.4
+  http: '>=0.13.6 <2.0.0'
+  linkify: ^5.0.0
+  json_annotation: ^4.8.1
 
 dev_dependencies:
   dart_code_metrics: ^5.7.5
   flutter_lints: ^2.0.2
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
   flutter_test:
     sdk: flutter
 
