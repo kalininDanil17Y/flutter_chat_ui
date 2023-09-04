@@ -22,7 +22,6 @@ class TypingIndicator extends StatefulWidget {
     required this.bubbleAlignment,
     this.options = const TypingIndicatorOptions(),
     required this.showIndicator,
-    this.l10n = const ChatL10nEn(),
   });
 
   /// See [Message.bubbleRtlAlignment].
@@ -30,8 +29,6 @@ class TypingIndicator extends StatefulWidget {
 
   /// See [TypingIndicatorOptions].
   final TypingIndicatorOptions options;
-
-  final ChatL10n l10n;
 
   /// Used to hide indicator when the [options.typingUsers] is empty.
   final bool showIndicator;
@@ -240,11 +237,11 @@ class TypingWidget extends StatelessWidget {
     if (author.isEmpty) {
       return '';
     } else if (author.length == 1) {
-      return sprintf(widget.l10n.typing1, [author.first.firstName]);
+      return sprintf(widget.options.l10n.typing1, [author.first.firstName]);
     } else if (author.length == 2) {
-      return sprintf(widget.l10n.typing2, [author.first.firstName, author[1].firstName]);
+      return sprintf(widget.options.l10n.typing2, [author.first.firstName, author[1].firstName]);
     } else {
-      return sprintf(widget.l10n.typing3, [author.first.firstName, author.length - 1]);
+      return sprintf(widget.options.l10n.typing3, [author.first.firstName, author.length - 1]);
     }
   }
 
@@ -448,6 +445,7 @@ class TypingIndicatorOptions {
     this.customTypingIndicator,
     this.typingMode = TypingIndicatorMode.name,
     this.typingUsers = const [],
+    this.l10n = const ChatL10nEn(),
   });
 
   /// Animation speed for circles.
@@ -463,6 +461,8 @@ class TypingIndicatorOptions {
   /// Author(s) for [TypingIndicator].
   /// By default its empty list which hides the indicator, see [types.User].
   final List<types.User> typingUsers;
+
+  final ChatL10n l10n;
 }
 
 @immutable
