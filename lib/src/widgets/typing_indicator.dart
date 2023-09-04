@@ -240,11 +240,11 @@ class TypingWidget extends StatelessWidget {
     if (author.isEmpty) {
       return '';
     } else if (author.length == 1) {
-      return sprintf(widget.l10n.typing1, author.first.firstName);
+      return sprintf(widget.l10n.typing1, [author.first.firstName]);
     } else if (author.length == 2) {
-      return sprintf(widget.l10n.typing2, author.first.firstName, author[1].firstName);
+      return sprintf(widget.l10n.typing2, [author.first.firstName, author[1].firstName]);
     } else {
-      return sprintf(widget.l10n.typing3, author.first.firstName, author.length - 1);
+      return sprintf(widget.l10n.typing3, [author.first.firstName, author.length - 1]);
     }
   }
 
