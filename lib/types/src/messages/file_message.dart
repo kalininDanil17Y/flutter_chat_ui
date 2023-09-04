@@ -17,6 +17,7 @@ abstract class FileMessage extends Message {
     super.createdAt,
     required super.id,
     this.isLoading,
+    required this.loadingValue,
     super.metadata,
     this.mimeType,
     required this.name,
@@ -36,6 +37,7 @@ abstract class FileMessage extends Message {
     int? createdAt,
     required String id,
     bool? isLoading,
+    double? loadingValue,
     Map<String, dynamic>? metadata,
     String? mimeType,
     required String name,
@@ -50,7 +52,7 @@ abstract class FileMessage extends Message {
     required String uri,
   }) = _FileMessage;
 
-  /// Creates a file message from a map (decoded JSON).
+    /// Creates a file message from a map (decoded JSON).
   factory FileMessage.fromJson(Map<String, dynamic> json) =>
       _$FileMessageFromJson(json);
 
@@ -60,6 +62,7 @@ abstract class FileMessage extends Message {
     int? createdAt,
     required String id,
     bool? isLoading,
+    double? loadingValue,
     required PartialFile partialFile,
     String? remoteId,
     String? roomId,
@@ -72,6 +75,7 @@ abstract class FileMessage extends Message {
         createdAt: createdAt,
         id: id,
         isLoading: isLoading,
+        loadingValue: loadingValue ?? 0,
         metadata: partialFile.metadata,
         mimeType: partialFile.mimeType,
         name: partialFile.name,
@@ -89,6 +93,8 @@ abstract class FileMessage extends Message {
   /// Specify whether the message content is currently being loaded.
   final bool? isLoading;
 
+  final double? loadingValue;
+
   /// Media type.
   final String? mimeType;
 
@@ -104,22 +110,23 @@ abstract class FileMessage extends Message {
   /// Equatable props.
   @override
   List<Object?> get props => [
-        author,
-        createdAt,
-        id,
-        isLoading,
-        metadata,
-        mimeType,
-        name,
-        remoteId,
-        repliedMessage,
-        roomId,
-        showStatus,
-        size,
-        status,
-        updatedAt,
-        uri,
-      ];
+    author,
+    createdAt,
+    id,
+    isLoading,
+    loadingValue,
+    metadata,
+    mimeType,
+    name,
+    remoteId,
+    repliedMessage,
+    roomId,
+    showStatus,
+    size,
+    status,
+    updatedAt,
+    uri,
+  ];
 
   @override
   Message copyWith({
@@ -127,6 +134,7 @@ abstract class FileMessage extends Message {
     int? createdAt,
     String? id,
     bool? isLoading,
+    double? loadingValue,
     Map<String, dynamic>? metadata,
     String? mimeType,
     String? name,
@@ -140,7 +148,7 @@ abstract class FileMessage extends Message {
     String? uri,
   });
 
-  /// Converts a file message to the map representation, encodable to JSON.
+/// Converts a file message to the map representation, encodable to JSON.
   @override
   Map<String, dynamic> toJson() => _$FileMessageToJson(this);
 }
@@ -152,6 +160,7 @@ class _FileMessage extends FileMessage {
     super.createdAt,
     required super.id,
     super.isLoading,
+    super.loadingValue,
     super.metadata,
     super.mimeType,
     required super.name,
@@ -173,6 +182,7 @@ class _FileMessage extends FileMessage {
     dynamic height = _Unset,
     String? id,
     dynamic isLoading = _Unset,
+    double? loadingValue,
     dynamic metadata = _Unset,
     dynamic mimeType = _Unset,
     String? name,
@@ -191,6 +201,7 @@ class _FileMessage extends FileMessage {
         createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
         id: id ?? this.id,
         isLoading: isLoading == _Unset ? this.isLoading : isLoading as bool?,
+        loadingValue: loadingValue ?? 0,
         metadata: metadata == _Unset
             ? this.metadata
             : metadata as Map<String, dynamic>?,
@@ -202,7 +213,7 @@ class _FileMessage extends FileMessage {
             : repliedMessage as Message?,
         roomId: roomId == _Unset ? this.roomId : roomId as String?,
         showStatus:
-            showStatus == _Unset ? this.showStatus : showStatus as bool?,
+        showStatus == _Unset ? this.showStatus : showStatus as bool?,
         size: size ?? this.size,
         status: status == _Unset ? this.status : status as Status?,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
