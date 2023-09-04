@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
+import 'package:flutter_chat_ui/types/flutter_chat_types' as types;
 
 import '../../models/input_clear_mode.dart';
 import '../../models/send_button_visibility_mode.dart';
