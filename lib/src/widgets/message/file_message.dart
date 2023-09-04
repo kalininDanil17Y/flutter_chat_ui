@@ -51,6 +51,7 @@ class FileMessage extends StatelessWidget {
                       child: CircularProgressIndicator(
                         color: color,
                         strokeWidth: 2,
+                        value: message.loadingValue
                       ),
                     ),
                   InheritedChatTheme.of(context).theme.documentIcon != null
