@@ -10,7 +10,7 @@ part 'file_message.g.dart';
 /// A class that represents file message.
 @JsonSerializable()
 @immutable
-abstract class FileMessage extends types.Message {
+abstract class FileMessage extends Message {
   /// Creates a file message.
   const FileMessage._({
     required super.author,
