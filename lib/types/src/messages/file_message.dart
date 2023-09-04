@@ -27,13 +27,13 @@ abstract class FileMessage extends Message {
     super.showStatus,
     required this.size,
     super.status,
-    types.MessageType? type,
+    MessageType? type,
     super.updatedAt,
     required this.uri,
-  }) : super(type: type ?? types.MessageType.file);
+  }) : super(type: type ?? MessageType.file);
 
   const factory FileMessage({
-    required types.User author,
+    required User author,
     int? createdAt,
     required String id,
     bool? isLoading,
@@ -42,19 +42,19 @@ abstract class FileMessage extends Message {
     String? mimeType,
     required String name,
     String? remoteId,
-    types.Message? repliedMessage,
+    Message? repliedMessage,
     String? roomId,
     bool? showStatus,
     required num size,
-    types.Status? status,
-    types.MessageType? type,
+    Status? status,
+    MessageType? type,
     int? updatedAt,
     required String uri,
   }) = _FileMessage;
 
   /// Creates a full file message from a partial one.
   factory FileMessage.fromPartial({
-    required types.User author,
+    required User author,
     int? createdAt,
     required String id,
     bool? isLoading,
@@ -63,7 +63,7 @@ abstract class FileMessage extends Message {
     String? remoteId,
     String? roomId,
     bool? showStatus,
-    types.Status? status,
+    Status? status,
     int? updatedAt,
   }) =>
       _FileMessage(
@@ -81,7 +81,7 @@ abstract class FileMessage extends Message {
         showStatus: showStatus,
         size: partialFile.size,
         status: status,
-        type: types.MessageType.file,
+        type: MessageType.file,
         updatedAt: updatedAt,
         uri: partialFile.uri,
       );
@@ -125,8 +125,8 @@ abstract class FileMessage extends Message {
   ];
 
   @override
-  types.Message copyWith({
-    types.User? author,
+  Message copyWith({
+    User? author,
     int? createdAt,
     String? id,
     bool? isLoading,
@@ -135,11 +135,11 @@ abstract class FileMessage extends Message {
     String? mimeType,
     String? name,
     String? remoteId,
-    types.Message? repliedMessage,
+    Message? repliedMessage,
     String? roomId,
     bool? showStatus,
     num? size,
-    types.Status? status,
+    Status? status,
     int? updatedAt,
     String? uri,
   });
@@ -168,8 +168,8 @@ class _FileMessage extends FileMessage {
   }) : super._();
 
   @override
-  types.Message copyWith({
-    types.User? author,
+  Message copyWith({
+    User? author,
     dynamic createdAt = _Unset,
     dynamic height = _Unset,
     String? id,
@@ -202,12 +202,12 @@ class _FileMessage extends FileMessage {
         remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
         repliedMessage: repliedMessage == _Unset
             ? this.repliedMessage
-            : repliedMessage as types.Message?,
+            : repliedMessage as Message?,
         roomId: roomId == _Unset ? this.roomId : roomId as String?,
         showStatus:
         showStatus == _Unset ? this.showStatus : showStatus as bool?,
         size: size ?? this.size,
-        status: status == _Unset ? this.status : status as types.Status?,
+        status: status == _Unset ? this.status : status as Status?,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
         uri: uri ?? this.uri,
       );
